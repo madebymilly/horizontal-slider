@@ -1,0 +1,286 @@
+*,
+html {
+  .reset;
+}
+
+html,
+body {
+  position: fixed;
+  .w100;
+  .h100;
+  overflow: hidden;
+}
+
+body {
+  background: @bgColor;
+  .font;
+  font-size: 16px;
+  line-height: 1.2em;
+  color: @fontColor;
+}
+
+p {
+  margin: 0 0 1.5em;
+}
+
+p a,
+li a {
+  color: @fontColor;
+  .underline;
+}
+
+p a:hover,
+li a:hover {
+  text-decoration: none;
+}
+
+h1,
+h2 {
+  .font;
+  font-size: 58px;
+  line-height: 1.2em;
+  color: @fontColor;
+  .uppercase;
+  text-shadow: 0 1px 2px @black50;
+}
+
+h1 span,
+h2 span {
+  border-bottom: 1px solid @white70;
+}
+
+h3 {
+  .font;
+  font-size: 16px;
+  line-height: 1.2em;
+  color: @fontColor;
+  text-shadow: 0 1px 1px @black50;
+}
+
+#slider1 {
+  height: 100vh;
+  transition: opacity 0.3s ease;
+  background-color: @bgColor;;
+}
+
+#bg {
+  height: 100vh;
+  .relative;
+  overflow: hidden;
+  transition: transform 0.7s ease-out, opacity 0.5s ease;
+  opacity: 0;
+  &.loaded {
+    opacity: 1;
+  }
+}
+
+#bg img {
+  width: auto;
+  .h100;
+  .absolute;
+  top: 0;
+  left: 0;
+  transition: transform 0.7s ease-out;
+}
+
+.section h1,
+.section h2 {
+  max-width: 530px;
+  .absolute;
+  top: 50%;
+  left: 120px;
+  margin-top: -60px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease .5s;
+}
+
+.section h1 {
+  top: 45px;
+  left: 45px;
+  margin-top: 0;
+}
+
+.section .info {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease 1s;
+}
+
+#section-3.section h2,
+#section-4.section h2,
+#section-5.section h2 {
+  left: auto;
+  right: 120px;
+  text-align: right;
+}
+
+#section-9.section h2 {
+  left: auto;
+  right: 45px;
+  top: 45px;
+  text-align: right;
+  margin-top: 0;
+  transition: opacity 0.3s ease 1s;
+}
+
+#section-9.section .info {
+  .block;
+  .vertical-align;
+  text-align: right;
+  .absolute;
+  right: 45px;
+}
+
+#section-9.section .socials {
+  .no-list;
+}
+
+#section-9.section .socials li {
+  .right;
+  margin: 0 0 0 30px;
+}
+
+#section-9.section .socials li:last-child {
+  margin-left: 0;
+}
+
+.section.is-active h1,
+.section.is-active h2,
+.section.is-active .info,
+.section.is-active .subtitle {
+  opacity: 1;
+  visibility: visible;
+}
+
+.section .subtitle {
+  .absolute;
+  left: 45px;
+  bottom: 100px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease 1s;
+}
+
+.section .caption {
+  .absolute;
+  bottom: 50px;
+  left: 360px;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.section.is-active .caption {
+  opacity: 1;
+  visibility: visible;
+}
+
+#navigation .nav-arrow {
+  width: 46px;
+  height: 86px;
+  .absolute;
+  top: 50%;
+  margin-top: -42px;
+  right: 45px;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.3s linear;
+}
+
+#navigation .nav-arrow:hover {
+  opacity: 0.5;
+}
+
+#navigation .nav-arrow.hide {
+  opacity: 0;
+  visibility: hidden;
+}
+
+#navigation .nav-arrow span {
+  .block;
+  .w100;
+  .h100;
+  background: url( '/src/img/navigation-arrow.png' ) no-repeat left top;
+  background-size: 100%;
+}
+
+#navigation .nav-arrow--prev {
+  left: 45px;
+  right: auto;
+}
+
+#navigation .nav-arrow--prev span {
+  .rotate(180deg);
+}
+
+#pagination {
+  .absolute;
+  left: 45px;
+  bottom: 45px;
+}
+
+#pagination:before,
+#pagination:after {
+  content: '';
+  background: url( '/src/img/dot-x.png' ) left top repeat-x;
+  height: 2px;
+  left: 0px;
+  top: 0;
+  right: 0px;
+  .absolute;
+}
+
+#pagination:after {
+  top: auto;
+  bottom: 0;
+}
+
+#pagination ul {
+  margin: 0;
+  padding: 0;
+}
+
+#pagination li {
+  .block;
+  .left;
+  .relative;
+  width: 28px;
+  height: 30px;
+  padding-right: 1px;
+}
+
+#pagination li:first-child:before,
+#pagination li:after {
+  .block;
+  content: '';
+  background: url( '/src/img/dot-y.png' ) left top repeat-y;
+  width: 2px;
+  top: 4px;
+  left: 0;
+  bottom: 2px;
+  .absolute;
+}
+
+#pagination li:after {
+  left: auto;
+  right: 0px;
+}
+
+#pagination li a {
+  color: @white70;
+  font-size: 16px;
+  line-height: 20px;
+  text-decoration: none;
+  .block;
+  width: 20px;
+  height: 20px;
+  margin: 5px auto;
+  text-align: center;
+  background: transparent;
+  transition: background 0.2s linear;
+}
+
+#pagination li a:hover,
+#pagination li a.is-active {
+  background: #fff;
+}
